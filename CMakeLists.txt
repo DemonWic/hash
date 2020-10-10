@@ -71,4 +71,4 @@ add_executable(hash
         libft/ft_toupper.c
         libft/get_next_line.c
         libft/libft.h
-        main.c read.c lemin.h functions.c libft/ft_free_str.c)
+        main.c read.c lemin.h functions.c find_ways.c go_lem.c libft/ft_free_str.c)

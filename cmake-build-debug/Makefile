@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/ahintz/CLionProjects/hash
+CMAKE_SOURCE_DIR = /Users/ahintz/Desktop/hash_new
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/ahintz/CLionProjects/hash/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/ahintz/Desktop/hash_new/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ahintz/CLionProjects/hash/cmake-build-debug/CMakeFiles /Users/ahintz/CLionProjects/hash/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ahintz/Desktop/hash_new/cmake-build-debug/CMakeFiles /Users/ahintz/Desktop/hash_new/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ahintz/CLionProjects/hash/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ahintz/Desktop/hash_new/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,6 +123,33 @@ hash/fast:
 	$(MAKE) -f CMakeFiles/hash.dir/build.make CMakeFiles/hash.dir/build
 .PHONY : hash/fast
 
+find_ways.o: find_ways.c.o
+
+.PHONY : find_ways.o
+
+# target to build an object file
+find_ways.c.o:
+	$(MAKE) -f CMakeFiles/hash.dir/build.make CMakeFiles/hash.dir/find_ways.c.o
+.PHONY : find_ways.c.o
+
+find_ways.i: find_ways.c.i
+
+.PHONY : find_ways.i
+
+# target to preprocess a source file
+find_ways.c.i:
+	$(MAKE) -f CMakeFiles/hash.dir/build.make CMakeFiles/hash.dir/find_ways.c.i
+.PHONY : find_ways.c.i
+
+find_ways.s: find_ways.c.s
+
+.PHONY : find_ways.s
+
+# target to generate assembly for a file
+find_ways.c.s:
+	$(MAKE) -f CMakeFiles/hash.dir/build.make CMakeFiles/hash.dir/find_ways.c.s
+.PHONY : find_ways.c.s
+
 functions.o: functions.c.o
 
 .PHONY : functions.o
@@ -149,6 +176,33 @@ functions.s: functions.c.s
 functions.c.s:
 	$(MAKE) -f CMakeFiles/hash.dir/build.make CMakeFiles/hash.dir/functions.c.s
 .PHONY : functions.c.s
+
+go_lem.o: go_lem.c.o
+
+.PHONY : go_lem.o
+
+# target to build an object file
+go_lem.c.o:
+	$(MAKE) -f CMakeFiles/hash.dir/build.make CMakeFiles/hash.dir/go_lem.c.o
+.PHONY : go_lem.c.o
+
+go_lem.i: go_lem.c.i
+
+.PHONY : go_lem.i
+
+# target to preprocess a source file
+go_lem.c.i:
+	$(MAKE) -f CMakeFiles/hash.dir/build.make CMakeFiles/hash.dir/go_lem.c.i
+.PHONY : go_lem.c.i
+
+go_lem.s: go_lem.c.s
+
+.PHONY : go_lem.s
+
+# target to generate assembly for a file
+go_lem.c.s:
+	$(MAKE) -f CMakeFiles/hash.dir/build.make CMakeFiles/hash.dir/go_lem.c.s
+.PHONY : go_lem.c.s
 
 libft/ft_atoi.o: libft/ft_atoi.c.o
 
@@ -1968,9 +2022,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... hash"
+	@echo "... find_ways.o"
+	@echo "... find_ways.i"
+	@echo "... find_ways.s"
 	@echo "... functions.o"
 	@echo "... functions.i"
 	@echo "... functions.s"
+	@echo "... go_lem.o"
+	@echo "... go_lem.i"
+	@echo "... go_lem.s"
 	@echo "... libft/ft_atoi.o"
 	@echo "... libft/ft_atoi.i"
 	@echo "... libft/ft_atoi.s"

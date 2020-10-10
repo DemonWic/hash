@@ -5,19 +5,22 @@
 #include "lemin.h"
 
 
-t_node **ft_read(int fd, int size_map)
+t_data *ft_read(int fd, int size_map)
 {
     int i;
     int id;
     int k;
     char *line;
     char **buf;
-    t_node **rooms;
+    t_data *data;
 
     k = 0;
     buf = NULL;
-    rooms = (t_node **)ft_memalloc((sizeof(t_node) * size_map));
-    if (rooms == NULL)
+    data = (t_data *)ft_memalloc(sizeof(t_data));
+    data->start = NULL;
+    data->end = NULL;
+    data->nodes = (t_node **)ft_memalloc((sizeof(t_node) * size_map));
+    if (data->nodes == NULL)
         return NULL;
     while((i = get_next_line(fd,&line)) > 0)
     {
@@ -51,15 +54,19 @@ t_node **ft_read(int fd, int size_map)
                 buf2->x = ft_atoi(buf[1]);
                 buf2->y = ft_atoi(buf[2]);
                 buf2->marker = k;
-                if (rooms[id] != NULL)
+                if (data->nodes[id] != NULL)
                 {
-                    t_node *buff = rooms[id];
+                    t_node *buff = data->nodes[id];
                     while(buff->next != NULL)
                         buff = buff->next;
                     buff->next = buf2;
                 }
                 else
-                    rooms[id] = buf2;
+                    data->nodes[id] = buf2;
+                if (k == 1)
+                    data->start = buf2;
+                if (k == 2)
+                    data->end = buf2;
                 k = 0;
                 ft_free_str(buf);
                 free(line);
@@ -68,9 +75,9 @@ t_node **ft_read(int fd, int size_map)
             {
                 buf = ft_strsplit(line, '-');
                 t_node *buf3;
-                buf3 = ft_search(buf[0], rooms);
+                buf3 = ft_search(buf[0], data->nodes);
                 buf3->rel = ft_strchrjoin(buf3->rel, buf[1], ' ');
-                buf3 = ft_search(buf[1], rooms);
+                buf3 = ft_search(buf[1], data->nodes);
                 buf3->rel = ft_strchrjoin(buf3->rel, buf[0], ' ');
                 ft_free_str(buf);
             }
@@ -82,7 +89,7 @@ t_node **ft_read(int fd, int size_map)
         }
 
     }
-    return rooms;
+    return data;
 }
 
 

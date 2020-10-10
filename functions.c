@@ -79,3 +79,30 @@ char *ft_strchrjoin(char *dest, char *src, char c)
     free(dest);
     return new;
 }
+
+void	ft_nodedel(t_node *alst)
+{
+    t_node *buf;
+
+    buf = alst;
+    if (buf)
+    {
+        while (buf->next)
+            ft_nodedel(buf->next);
+        free(buf);
+    }
+}
+
+//void ft_datadel(t_data *data)
+//{
+//    int i;
+//    t_node *buf;
+//
+//    i = 0;
+//    while (i < MAP_SIZE)
+//    {
+//        if (data->nodes[i] != NULL)
+//
+//        i++;
+//    }
+//}

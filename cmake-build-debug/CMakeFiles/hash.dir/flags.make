@@ -6,5 +6,5 @@ C_FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk 
 
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/ahintz/CLionProjects/hash/libft 
+C_INCLUDES = -I/Users/ahintz/Desktop/hash_new/libft 
 

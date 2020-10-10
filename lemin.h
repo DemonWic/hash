@@ -1,9 +1,9 @@
 
 #ifndef HASH_LEMIN_H
 #define HASH_LEMIN_H
-#define MAP_SIZE 100000
+#define MAP_SIZE 4000
 
-
+#include "libft.h"
 //typedef struct  s_room
 //{
 //    int         x;
@@ -21,6 +21,7 @@ typedef struct  s_link
     char        *s2;
 }               t_link;
 
+
 typedef struct  s_node
 {
     char        *name;
@@ -31,24 +32,28 @@ typedef struct  s_node
     struct s_node *next;
 }               t_node;
 
+
 typedef struct  s_ukaz
 {
     char        *prev;
     char        *cur;
 }               t_ukaz;
 
+
 typedef struct  s_way
 {
-//    t_clist     *way;
+    char        *way[MAP_SIZE];
     int         len;
 }               t_way;
 
 typedef struct  s_fdata
 {
-//    t_clist *open;
-//    t_clist *closed;
-    t_ukaz  uks[1000];
+    char    *open[MAP_SIZE];
+    char    *closed[MAP_SIZE];
+    t_ukaz  uks[MAP_SIZE];
     int     u_len;
+    int     o_len;
+    int     c_len;
 }               t_fdata;
 
 typedef struct  s_lem
@@ -56,24 +61,37 @@ typedef struct  s_lem
     t_way       *way;
     char        *pos;
     int         n;
+    int         finished;
 }               t_lem;
+
+typedef struct  s_ulist
+{
+    struct s_ukaz   *val;
+    struct s_ulist  *next;
+}               t_ulist;
+
 
 typedef struct  s_data
 {
-    int         size_map; // 10000
     t_node      *start;
     t_node      *end;
     t_node      **nodes;
-//    t_llist     *links;
-//    t_wlist     *ways;
-    int         ant_count;
+    t_way       *ways[MAP_SIZE];
+    int         w_count;
     int         col;
+    int         ant_count;
     int         cur_n;
 }               t_data;
 
+
+
 unsigned int ft_hash(const char * datum, int size);
-t_node **ft_read(int fd, int size_map);
+//t_node **ft_read(int fd, int size_map);
 t_node *ft_search(const char *name, t_node **rooms);
 char *ft_strchrjoin(char *dest, char *src, char c);
+t_data *ft_read(int fd, int size_map);
+void	ft_nodedel(t_node *alst);
+int             find_ways(t_data *data);
+int             go_lem(t_data *data);
 
 #endif
