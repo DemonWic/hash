@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="hash"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/ahintz/CLionProjects/hash/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/ahintz/CLionProjects/hash/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/ahintz/CLionProjects/hash/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/ahintz/CLionProjects/hash/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/ahintz/CLionProjects/hash/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/ahintz/CLionProjects/hash/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/ahintz/CLionProjects/hash/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/ahintz/CLionProjects/hash/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/ahintz/CLionProjects/hash/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/ahintz/CLionProjects/hash/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/ahintz/CLionProjects/hash/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/ahintz/CLionProjects/hash/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/ahintz/CLionProjects/hash/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/ahintz/CLionProjects/hash/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/ahintz/CLionProjects/hash/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hash">
+				<Option output="/Users/ahintz/CLionProjects/hash/cmake-build-debug/hash" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ahintz/CLionProjects/hash/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/ahintz/CLionProjects/hash/libft"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/ahintz/CLionProjects/hash/cmake-build-debug/Makefile&quot;  VERBOSE=1 hash"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/ahintz/CLionProjects/hash/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/ahintz/CLionProjects/hash/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/ahintz/CLionProjects/hash/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hash/fast">
+				<Option output="/Users/ahintz/CLionProjects/hash/cmake-build-debug/hash" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ahintz/CLionProjects/hash/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/ahintz/CLionProjects/hash/libft"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/ahintz/CLionProjects/hash/cmake-build-debug/Makefile&quot;  VERBOSE=1 hash/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/ahintz/CLionProjects/hash/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/ahintz/CLionProjects/hash/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/ahintz/CLionProjects/hash/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/functions.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/lemin.h">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_atoi.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_base16_decoder.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_base16_encoder.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_bzero.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_free_str.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_isalnum.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_isalpha.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_isascii.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_isdigit.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_isprint.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_itoa.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_lstadd.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_lstdel.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_lstdelone.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_lstiter.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_lstmap.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_lstnew.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_memalloc.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_memccpy.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_memchr.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_memcmp.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_memcpy.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_memdel.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_memmove.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_memset.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_pow.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_putchar.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_putchar_fd.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_putendl.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_putendl_fd.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_putnbr.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_putnbr_fd.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_putstr.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_putstr_fd.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_rot_n.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_sqrt.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_strcat.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_strchr.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_strclr.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_strcmp.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_strcpy.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_strdel.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_strdup.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_strequ.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_striter.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_striteri.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_strjoin.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_strlcat.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_strlen.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_strmap.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_strmapi.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_strncat.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_strncmp.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_strncpy.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_strnequ.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_strnew.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_strnstr.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_strrchr.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_strsplit.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_strstr.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_strsub.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_strtrim.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_tolower.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/ft_toupper.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/get_next_line.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/libft/libft.h">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/main.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/read.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/CLionProjects/hash/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
