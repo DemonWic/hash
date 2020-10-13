@@ -20,16 +20,6 @@ fcntl.h
 stdio.h
 -
 
-/Users/ahintz/Desktop/hash_new/find_ways.c
-lemin.h
-/Users/ahintz/Desktop/hash_new/lemin.h
-
-/Users/ahintz/Desktop/hash_new/functions.c
-lemin.h
-/Users/ahintz/Desktop/hash_new/lemin.h
-libft.h
-/Users/ahintz/Desktop/hash_new/libft.h
-
 /Users/ahintz/Desktop/hash_new/go_lem.c
 lemin.h
 /Users/ahintz/Desktop/hash_new/lemin.h
@@ -37,18 +27,4 @@ lemin.h
 /Users/ahintz/Desktop/hash_new/lemin.h
 libft.h
 /Users/ahintz/Desktop/hash_new/libft.h
-
-/Users/ahintz/Desktop/hash_new/main.c
-stdio.h
--
-lemin.h
-/Users/ahintz/Desktop/hash_new/lemin.h
-fcntl.h
--
-
-/Users/ahintz/Desktop/hash_new/read.c
-libft.h
-/Users/ahintz/Desktop/hash_new/libft.h
-lemin.h
-/Users/ahintz/Desktop/hash_new/lemin.h
 

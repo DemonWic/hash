@@ -5,13 +5,20 @@ int     open_node(t_fdata *f_data, t_node *cur)
 	int     i;
 	
 	i = 0;
-	while (i <= f_data->o_len)
+	while (i < f_data->o_len)
 	{
 		if (ft_strcmp(cur->name, f_data->open[i]) == 0)
-			return (1);
+			return (0);
 		i++;
 	}
-	f_data->open[i] = ft_strdup(cur->name);
+	i = 0;
+    while (i < f_data->c_len)
+    {
+        if (ft_strcmp(cur->name, f_data->closed[i]) == 0)
+            return (0);
+        i++;
+    }
+	f_data->open[f_data->o_len] = ft_strdup(cur->name);
 	f_data->o_len++;
 	return (1);
 }
@@ -23,7 +30,7 @@ int         close_node(t_fdata *f_data, t_node *cur)
 	
 	f_data->closed[f_data->c_len++] = ft_strdup(cur->name);
 	i = 0;
-	while (i <= f_data->o_len)
+	while (i < f_data->o_len)
 	{
 		if (ft_strcmp(f_data->open[i], cur->name) == 0)
 		{
@@ -85,14 +92,14 @@ int     add_way(t_data *data, t_node *cur, t_fdata *f_data)
 	ul = NULL;
 	new = (t_way*)malloc(sizeof(t_way));
 	new->len = 0;
-	while (ft_strcmp(cur->name, data->start->name) == 0)
+	while (ft_strcmp(cur->name, data->start->name) != 0)
 	{
 		ul = add_ul(ul, find_uk(cur, f_data));
 		cur = ft_search(ul->val->prev, data->nodes);
 		new->len++;
 	}
 	i = 0;
-	while (i <= new->len)
+	while (i < new->len)
 	{
 		new->way[i++] = ft_strdup(ul->val->cur);
 		ul = ul->next;
@@ -112,10 +119,10 @@ t_node  *reset_search(t_data *data, t_fdata *f_data)
 	f_data->u_len = 0;
 	// dopisat free funkziu
 	i = 0;
-	while (i <= data->w_count)
+	while (i < data->w_count)
 	{
 		j = 0;
-		while (j <= data->ways[i]->len)
+		while (j < data->ways[i]->len)
 			close_node(f_data, ft_search(data->ways[i]->way[j++], data->nodes));
 		i++;
 	}
@@ -128,10 +135,10 @@ int     find_ways(t_data *data)
 	t_node  *cur;
 	char    **cur_rel;
 	int     i;
-	
+
+    data->w_count = 0;
 	f_data = (t_fdata*)malloc(sizeof(t_fdata));
 	reset_search(data, f_data);
-	data->w_count = 0;
 	while (f_data->open[0])
 	{
 		cur = ft_search(f_data->open[0], data->nodes);
@@ -144,10 +151,10 @@ int     find_ways(t_data *data)
 			{
 				add_way(data, cur, f_data);
 				reset_search(data, f_data);
-				continue ;
+                break ;
 			}
-			open_node(f_data, ft_search(cur_rel[i], data->nodes));
-			add_ukaz(f_data, cur, cur_rel[i]);
+			if (open_node(f_data, ft_search(cur_rel[i], data->nodes)))
+			    add_ukaz(f_data, cur, cur_rel[i]);
 			i++;
 		}
 	}

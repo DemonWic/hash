@@ -83,7 +83,7 @@ t_data *ft_read(int fd, int size_map)
             }
             else
             {
-                int ant_count = ft_atoi(line);
+                data->ant_count = ft_atoi(line);
             }
 
         }

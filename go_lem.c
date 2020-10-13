@@ -22,7 +22,7 @@ int     count_min_lems(t_data *data, int a)
 	
 	res = 0;
 	i = 0;
-	while (i <= a)
+	while (i < a)
 	{
 		res += data->ways[i]->len - data->ways[0]->len + 1;
 		i++;
@@ -34,7 +34,7 @@ int     new_lems(t_data *data, t_lem *lems[data->ant_count], int cur_lems)
 	int     i;
 	
 	i = 0;
-	while (i <= data->w_count)
+	while (i < data->w_count)
 	{
 		if (data->col >= count_min_lems(data, i))
 		{
@@ -89,11 +89,14 @@ int     make_step(t_data *data, t_lem *lems[data->ant_count], int cur_lems)
 	while (i < cur_lems)
 	{
 		if (lems[i]->finished == 1)
-			continue ;
+        {
+		    i++;
+            continue ;
+        }
 		lems[i]->pos = get_next_pos(lems[i]->pos, lems[i]->way);
 		if (lems[i]->pos == NULL)
 		{
-			end_lem(data, lems, i);
+			end_lem(data, lems, i++);
 			continue ;
 		}
 		ft_putchar('L');
@@ -115,10 +118,12 @@ int     go_lem(t_data *data)
 	data->col = data->ant_count;
 	data->cur_n = 0;
 	cur_lems = new_lems(data, lems, cur_lems);
+	ft_putchar('\n');
 	while (data->cur_n > 0)
 	{
-		cur_lems = make_step(data, lems, cur_lems);
+		make_step(data, lems, cur_lems);
 		cur_lems = new_lems(data, lems, cur_lems);
+        ft_putchar('\n');
 	}
 	return (1);
 }
