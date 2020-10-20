@@ -69,8 +69,8 @@ void bfs(t_data *all, int count)
         e->end = NULL;
         free(e->begin);
         e->begin = NULL;
-//        free(&e);
-//        e = NULL;
+        free(e);
+        e = NULL;
     }
     free(node);
     printf("\n");

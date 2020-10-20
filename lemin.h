@@ -94,7 +94,7 @@ typedef struct s_edge {
 }               t_edge;
 
 typedef struct s_stack {
-    t_edge elem[MAP_SIZE];
+    t_edge *elem[MAP_SIZE];
     int top;
 }               t_stack;
 

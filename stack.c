@@ -16,7 +16,7 @@ int ft_stkpush(t_stack *stk, t_edge *edge)
 {
     if(stk->top < MAP_SIZE)
     {
-        stk->elem[stk->top] = *edge;
+        stk->elem[stk->top] = edge;
         stk->top++;
         return (1);
     }
@@ -31,7 +31,7 @@ t_edge *ft_stkpop(t_stack *stk)
     if((stk->top) > 0)
     {
         stk->top--;
-        elem = &(stk->elem[stk->top]);
+        elem = stk->elem[stk->top];
         return (elem);
     }
     else
