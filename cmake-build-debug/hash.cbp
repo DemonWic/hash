@@ -80,6 +80,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/ahintz/Desktop/hash_new/bfs.c">
+			<Option target="hash"/>
+		</Unit>
 		<Unit filename="/Users/ahintz/Desktop/hash_new/find_ways.c">
 			<Option target="hash"/>
 		</Unit>
@@ -293,7 +296,13 @@
 		<Unit filename="/Users/ahintz/Desktop/hash_new/main.c">
 			<Option target="hash"/>
 		</Unit>
+		<Unit filename="/Users/ahintz/Desktop/hash_new/queue.c">
+			<Option target="hash"/>
+		</Unit>
 		<Unit filename="/Users/ahintz/Desktop/hash_new/read.c">
+			<Option target="hash"/>
+		</Unit>
+		<Unit filename="/Users/ahintz/Desktop/hash_new/stack.c">
 			<Option target="hash"/>
 		</Unit>
 		<Unit filename="/Users/ahintz/Desktop/hash_new/CMakeLists.txt">

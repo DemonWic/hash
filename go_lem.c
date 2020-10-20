@@ -61,9 +61,10 @@ char    *get_next_pos(char *cur, t_way *way)
 	{
 		if (ft_strcmp(cur, way->way[i]) == 0)
 		{
-			free(cur);
+//		    free(cur);
 			return (ft_strdup(way->way[i + 1]));
 		}
+		i++;
 	}
 	free(cur);
 	return (NULL);

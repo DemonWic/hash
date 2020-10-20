@@ -967,6 +967,45 @@ CMakeFiles/hash.dir/libft/ft_free_str.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hash.dir/libft/ft_free_str.c.s"
 	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/ahintz/Desktop/hash_new/libft/ft_free_str.c -o CMakeFiles/hash.dir/libft/ft_free_str.c.s
 
+CMakeFiles/hash.dir/stack.c.o: CMakeFiles/hash.dir/flags.make
+CMakeFiles/hash.dir/stack.c.o: ../stack.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ahintz/Desktop/hash_new/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object CMakeFiles/hash.dir/stack.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/hash.dir/stack.c.o   -c /Users/ahintz/Desktop/hash_new/stack.c
+
+CMakeFiles/hash.dir/stack.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/hash.dir/stack.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/ahintz/Desktop/hash_new/stack.c > CMakeFiles/hash.dir/stack.c.i
+
+CMakeFiles/hash.dir/stack.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hash.dir/stack.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/ahintz/Desktop/hash_new/stack.c -o CMakeFiles/hash.dir/stack.c.s
+
+CMakeFiles/hash.dir/queue.c.o: CMakeFiles/hash.dir/flags.make
+CMakeFiles/hash.dir/queue.c.o: ../queue.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ahintz/Desktop/hash_new/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/hash.dir/queue.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/hash.dir/queue.c.o   -c /Users/ahintz/Desktop/hash_new/queue.c
+
+CMakeFiles/hash.dir/queue.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/hash.dir/queue.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/ahintz/Desktop/hash_new/queue.c > CMakeFiles/hash.dir/queue.c.i
+
+CMakeFiles/hash.dir/queue.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hash.dir/queue.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/ahintz/Desktop/hash_new/queue.c -o CMakeFiles/hash.dir/queue.c.s
+
+CMakeFiles/hash.dir/bfs.c.o: CMakeFiles/hash.dir/flags.make
+CMakeFiles/hash.dir/bfs.c.o: ../bfs.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ahintz/Desktop/hash_new/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/hash.dir/bfs.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/hash.dir/bfs.c.o   -c /Users/ahintz/Desktop/hash_new/bfs.c
+
+CMakeFiles/hash.dir/bfs.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/hash.dir/bfs.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/ahintz/Desktop/hash_new/bfs.c > CMakeFiles/hash.dir/bfs.c.i
+
+CMakeFiles/hash.dir/bfs.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hash.dir/bfs.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/ahintz/Desktop/hash_new/bfs.c -o CMakeFiles/hash.dir/bfs.c.s
+
 # Object files for target hash
 hash_OBJECTS = \
 "CMakeFiles/hash.dir/libft/ft_atoi.c.o" \
@@ -1038,7 +1077,10 @@ hash_OBJECTS = \
 "CMakeFiles/hash.dir/functions.c.o" \
 "CMakeFiles/hash.dir/find_ways.c.o" \
 "CMakeFiles/hash.dir/go_lem.c.o" \
-"CMakeFiles/hash.dir/libft/ft_free_str.c.o"
+"CMakeFiles/hash.dir/libft/ft_free_str.c.o" \
+"CMakeFiles/hash.dir/stack.c.o" \
+"CMakeFiles/hash.dir/queue.c.o" \
+"CMakeFiles/hash.dir/bfs.c.o"
 
 # External object files for target hash
 hash_EXTERNAL_OBJECTS =
@@ -1113,9 +1155,12 @@ hash: CMakeFiles/hash.dir/functions.c.o
 hash: CMakeFiles/hash.dir/find_ways.c.o
 hash: CMakeFiles/hash.dir/go_lem.c.o
 hash: CMakeFiles/hash.dir/libft/ft_free_str.c.o
+hash: CMakeFiles/hash.dir/stack.c.o
+hash: CMakeFiles/hash.dir/queue.c.o
+hash: CMakeFiles/hash.dir/bfs.c.o
 hash: CMakeFiles/hash.dir/build.make
 hash: CMakeFiles/hash.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/ahintz/Desktop/hash_new/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Linking C executable hash"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/ahintz/Desktop/hash_new/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Linking C executable hash"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hash.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

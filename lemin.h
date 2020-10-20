@@ -29,6 +29,8 @@ typedef struct  s_node
     int         y;
     char        *rel;
     int         marker;
+    int         met;
+    int         exclude;
     struct s_node *next;
 }               t_node;
 
@@ -84,14 +86,49 @@ typedef struct  s_data
 }               t_data;
 
 
+///
+
+typedef struct s_edge {
+    char *begin;
+    char *end;
+}               t_edge;
+
+typedef struct s_stack {
+    t_edge elem[MAP_SIZE];
+    int top;
+}               t_stack;
+
+
+typedef struct s_queue {
+    char *qu[MAP_SIZE + 1];
+    int rear;
+    int frnt;
+}              t_queue;
+
+///
+
+
 
 unsigned int ft_hash(const char * datum, int size);
 //t_node **ft_read(int fd, int size_map);
 t_node *ft_search(const char *name, t_node **rooms);
 char *ft_strchrjoin(char *dest, char *src, char c);
 t_data *ft_read(int fd, int size_map);
-void	ft_nodedel(t_node *alst);
+void	ft_nodedelone(t_node **alst);
+void	ft_nodedel(t_node **alst);
+void    ft_datadel(t_data *data);
 int             find_ways(t_data *data);
 int             go_lem(t_data *data);
+
+//
+void ft_stkinit(t_stack *stk);
+int ft_stkpush(t_stack *stk, t_edge *edge);
+t_edge *ft_stkpop(t_stack *stk);
+int ft_stkempty(t_stack *stk);
+void ft_quinit(t_queue *q);
+int ft_quinsert(t_queue *q, char *s);
+int ft_quempty(t_queue *q);
+char *ft_qupop(t_queue *q);
+void bfs(t_data *all, int count);
 
 #endif

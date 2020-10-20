@@ -53,6 +53,8 @@ t_data *ft_read(int fd, int size_map)
                 buf2->name = ft_strdup(buf[0]);
                 buf2->x = ft_atoi(buf[1]);
                 buf2->y = ft_atoi(buf[2]);
+                buf2->met = 0;
+                buf2->exclude = 0;
                 buf2->marker = k;
                 if (data->nodes[id] != NULL)
                 {
@@ -69,7 +71,7 @@ t_data *ft_read(int fd, int size_map)
                     data->end = buf2;
                 k = 0;
                 ft_free_str(buf);
-                free(line);
+                ft_strdel(&line);
             }
             else if (ft_strchr(line, '-'))
             {
@@ -80,10 +82,12 @@ t_data *ft_read(int fd, int size_map)
                 buf3 = ft_search(buf[1], data->nodes);
                 buf3->rel = ft_strchrjoin(buf3->rel, buf[0], ' ');
                 ft_free_str(buf);
+                ft_strdel(&line);
             }
             else
             {
                 data->ant_count = ft_atoi(line);
+                ft_strdel(&line);
             }
 
         }

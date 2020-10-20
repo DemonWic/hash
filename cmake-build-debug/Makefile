@@ -123,6 +123,33 @@ hash/fast:
 	$(MAKE) -f CMakeFiles/hash.dir/build.make CMakeFiles/hash.dir/build
 .PHONY : hash/fast
 
+bfs.o: bfs.c.o
+
+.PHONY : bfs.o
+
+# target to build an object file
+bfs.c.o:
+	$(MAKE) -f CMakeFiles/hash.dir/build.make CMakeFiles/hash.dir/bfs.c.o
+.PHONY : bfs.c.o
+
+bfs.i: bfs.c.i
+
+.PHONY : bfs.i
+
+# target to preprocess a source file
+bfs.c.i:
+	$(MAKE) -f CMakeFiles/hash.dir/build.make CMakeFiles/hash.dir/bfs.c.i
+.PHONY : bfs.c.i
+
+bfs.s: bfs.c.s
+
+.PHONY : bfs.s
+
+# target to generate assembly for a file
+bfs.c.s:
+	$(MAKE) -f CMakeFiles/hash.dir/build.make CMakeFiles/hash.dir/bfs.c.s
+.PHONY : bfs.c.s
+
 find_ways.o: find_ways.c.o
 
 .PHONY : find_ways.o
@@ -1986,6 +2013,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/hash.dir/build.make CMakeFiles/hash.dir/main.c.s
 .PHONY : main.c.s
 
+queue.o: queue.c.o
+
+.PHONY : queue.o
+
+# target to build an object file
+queue.c.o:
+	$(MAKE) -f CMakeFiles/hash.dir/build.make CMakeFiles/hash.dir/queue.c.o
+.PHONY : queue.c.o
+
+queue.i: queue.c.i
+
+.PHONY : queue.i
+
+# target to preprocess a source file
+queue.c.i:
+	$(MAKE) -f CMakeFiles/hash.dir/build.make CMakeFiles/hash.dir/queue.c.i
+.PHONY : queue.c.i
+
+queue.s: queue.c.s
+
+.PHONY : queue.s
+
+# target to generate assembly for a file
+queue.c.s:
+	$(MAKE) -f CMakeFiles/hash.dir/build.make CMakeFiles/hash.dir/queue.c.s
+.PHONY : queue.c.s
+
 read.o: read.c.o
 
 .PHONY : read.o
@@ -2013,6 +2067,33 @@ read.c.s:
 	$(MAKE) -f CMakeFiles/hash.dir/build.make CMakeFiles/hash.dir/read.c.s
 .PHONY : read.c.s
 
+stack.o: stack.c.o
+
+.PHONY : stack.o
+
+# target to build an object file
+stack.c.o:
+	$(MAKE) -f CMakeFiles/hash.dir/build.make CMakeFiles/hash.dir/stack.c.o
+.PHONY : stack.c.o
+
+stack.i: stack.c.i
+
+.PHONY : stack.i
+
+# target to preprocess a source file
+stack.c.i:
+	$(MAKE) -f CMakeFiles/hash.dir/build.make CMakeFiles/hash.dir/stack.c.i
+.PHONY : stack.c.i
+
+stack.s: stack.c.s
+
+.PHONY : stack.s
+
+# target to generate assembly for a file
+stack.c.s:
+	$(MAKE) -f CMakeFiles/hash.dir/build.make CMakeFiles/hash.dir/stack.c.s
+.PHONY : stack.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -2022,6 +2103,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... hash"
+	@echo "... bfs.o"
+	@echo "... bfs.i"
+	@echo "... bfs.s"
 	@echo "... find_ways.o"
 	@echo "... find_ways.i"
 	@echo "... find_ways.s"
@@ -2229,9 +2313,15 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... queue.o"
+	@echo "... queue.i"
+	@echo "... queue.s"
 	@echo "... read.o"
 	@echo "... read.i"
 	@echo "... read.s"
+	@echo "... stack.o"
+	@echo "... stack.i"
+	@echo "... stack.s"
 .PHONY : help
 
 

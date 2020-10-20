@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/hash.dir/bfs.c.o"
   "CMakeFiles/hash.dir/find_ways.c.o"
   "CMakeFiles/hash.dir/functions.c.o"
   "CMakeFiles/hash.dir/go_lem.c.o"
@@ -68,7 +69,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/hash.dir/libft/ft_toupper.c.o"
   "CMakeFiles/hash.dir/libft/get_next_line.c.o"
   "CMakeFiles/hash.dir/main.c.o"
+  "CMakeFiles/hash.dir/queue.c.o"
   "CMakeFiles/hash.dir/read.c.o"
+  "CMakeFiles/hash.dir/stack.c.o"
   "hash"
   "hash.pdb"
 )

@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/Users/ahintz/Desktop/hash_new/bfs.c" "/Users/ahintz/Desktop/hash_new/cmake-build-debug/CMakeFiles/hash.dir/bfs.c.o"
   "/Users/ahintz/Desktop/hash_new/find_ways.c" "/Users/ahintz/Desktop/hash_new/cmake-build-debug/CMakeFiles/hash.dir/find_ways.c.o"
   "/Users/ahintz/Desktop/hash_new/functions.c" "/Users/ahintz/Desktop/hash_new/cmake-build-debug/CMakeFiles/hash.dir/functions.c.o"
   "/Users/ahintz/Desktop/hash_new/go_lem.c" "/Users/ahintz/Desktop/hash_new/cmake-build-debug/CMakeFiles/hash.dir/go_lem.c.o"
@@ -73,7 +74,9 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/ahintz/Desktop/hash_new/libft/ft_toupper.c" "/Users/ahintz/Desktop/hash_new/cmake-build-debug/CMakeFiles/hash.dir/libft/ft_toupper.c.o"
   "/Users/ahintz/Desktop/hash_new/libft/get_next_line.c" "/Users/ahintz/Desktop/hash_new/cmake-build-debug/CMakeFiles/hash.dir/libft/get_next_line.c.o"
   "/Users/ahintz/Desktop/hash_new/main.c" "/Users/ahintz/Desktop/hash_new/cmake-build-debug/CMakeFiles/hash.dir/main.c.o"
+  "/Users/ahintz/Desktop/hash_new/queue.c" "/Users/ahintz/Desktop/hash_new/cmake-build-debug/CMakeFiles/hash.dir/queue.c.o"
   "/Users/ahintz/Desktop/hash_new/read.c" "/Users/ahintz/Desktop/hash_new/cmake-build-debug/CMakeFiles/hash.dir/read.c.o"
+  "/Users/ahintz/Desktop/hash_new/stack.c" "/Users/ahintz/Desktop/hash_new/cmake-build-debug/CMakeFiles/hash.dir/stack.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

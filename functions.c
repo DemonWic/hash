@@ -53,9 +53,11 @@ char *ft_strchrjoin(char *dest, char *src, char c)
     int len_dest;
     int len_src;
     int i;
+    int j;
     char *new;
 
     i = 0;
+    j = 0;
     if (dest == NULL && src == NULL)
         return NULL;
     else if (dest == NULL && src != NULL)
@@ -72,37 +74,57 @@ char *ft_strchrjoin(char *dest, char *src, char c)
         else if (i == len_dest)
             new[i] = c;
         else
-            new[i] = *src++;
+            new[i] = src[j++];
         i++;
     }
     new[i] = '\0';
-    free(dest);
+    ft_memdel((void **)&dest);
+//    free(dest);
     return new;
 }
 
-void	ft_nodedel(t_node *alst)
+void	ft_nodedelone(t_node **alst)
 {
-    t_node *buf;
+    t_node *new_l;
+
+    new_l = *alst;
+    if (new_l)
+    {
+        free(new_l->name);
+        free(new_l->rel);
+        free(*alst);
+        *alst = NULL;
+    }
+}
+
+void	ft_nodedel(t_node **alst)
+{
+    t_node **buf;
 
     buf = alst;
     if (buf)
     {
-        while (buf->next)
-            ft_nodedel(buf->next);
-        free(buf);
+        while ((*buf)->next)
+            ft_nodedel(&(*buf)->next);
+        ft_nodedelone(&(*buf));
     }
 }
 
-//void ft_datadel(t_data *data)
-//{
-//    int i;
-//    t_node *buf;
-//
-//    i = 0;
-//    while (i < MAP_SIZE)
-//    {
-//        if (data->nodes[i] != NULL)
-//
-//        i++;
-//    }
-//}
+void ft_datadel(t_data *data)
+{
+    int i;
+    t_node *buf;
+
+    i = 0;
+    while (i < MAP_SIZE)
+    {
+        if (data->nodes[i] != NULL)
+        {
+            buf = data->nodes[i];
+            ft_nodedel(&buf);
+        }
+        i++;
+    }
+    free(data->nodes);
+    free(data);
+}
