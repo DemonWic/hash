@@ -19,17 +19,7 @@ int main()
         res = bfs(all, i);
         i += 3;
     }
-//    bfs(all, 0);
-//    bfs(all, 3);
-//    bfs(all, 6);
-//    bfs(all, 9);
-//    bfs(all, 12);
-//    bfs(all, 15);
-//    bfs(all, 18);
-//    bfs(all, 21);
-//    bfs(all, 24);
     ft_datadel(all);
-//    printf("Hello");
 //    find_ways(all);
 //    go_lem(all);
     return 0;
