@@ -129,6 +129,6 @@ void ft_quinit(t_queue *q);
 int ft_quinsert(t_queue *q, char *s);
 int ft_quempty(t_queue *q);
 char *ft_qupop(t_queue *q);
-void bfs(t_data *all, int count);
+int bfs(t_data *all, int count);
 
 #endif

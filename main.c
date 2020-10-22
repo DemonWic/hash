@@ -6,11 +6,21 @@
 int main()
 {
     int fd;
-    fd = open("../test3.txt", O_RDONLY);
+    int i;
+    int res;
+
+    i = 0;
+    res = 1;
+    fd = open("../test_rooms.txt", O_RDONLY);
     t_data *all;
     all = ft_read(fd, MAP_SIZE);
-    bfs(all, 0);
-    bfs(all, 3);
+    while (res != 0)
+    {
+        res = bfs(all, i);
+        i += 3;
+    }
+//    bfs(all, 0);
+//    bfs(all, 3);
 //    bfs(all, 6);
 //    bfs(all, 9);
 //    bfs(all, 12);

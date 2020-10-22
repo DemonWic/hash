@@ -4,7 +4,7 @@
 
 #include "lemin.h"
 
-void bfs(t_data *all, int count)
+int bfs(t_data *all, int count)
 {
     t_queue queue;
     ft_quinit(&queue);
@@ -15,9 +15,11 @@ void bfs(t_data *all, int count)
     char *node;
     char **buf;
     int i;
+    int res;
     t_edge *e;
     t_node *n;
 
+    res = 0;
     start = all->start->name;
     end = all->end->name;
     ft_quinsert(&queue, start);
@@ -40,14 +42,20 @@ void bfs(t_data *all, int count)
                 e->begin = ft_strdup(node);
                 e->end = ft_strdup(buf[i]);
                 ft_stkpush(&edges, e);
-                if (node == end)
+//              if (node == end)
+                if (n->name == end)
+                {
+                    res = 1;
                     break;
+                }
             }
             i++;
         }
         free(node);
         ft_free_str(buf);
     }
+//    if (res == 0)
+//        return (res);
     printf("%s ", end);
     node = ft_strdup(end);
     while (!ft_stkempty(&edges))
@@ -74,4 +82,5 @@ void bfs(t_data *all, int count)
     }
     free(node);
     printf("\n");
+    return (res);
 }
