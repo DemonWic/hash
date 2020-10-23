@@ -19,6 +19,7 @@
 typedef struct s_road
 {
     char        *edge;
+    int         len;
     struct s_road *next;
 }              t_road;
 

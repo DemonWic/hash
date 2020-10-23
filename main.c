@@ -30,6 +30,7 @@ int main()
     {
 
         buf = all->roads[i];
+        printf("len = %i  - ", buf->len);
         while(buf)
         {
             printf("%s ", buf->edge);

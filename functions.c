@@ -175,6 +175,7 @@ void    ft_add_edge(t_road **road, int num, char *edge)
         new = (t_road *) ft_memalloc(sizeof(t_road));
         new->next = NULL;
         new->edge = ft_strdup(edge);
+        new->len = 1;
         road[num] = new;
     }
     else
@@ -182,6 +183,7 @@ void    ft_add_edge(t_road **road, int num, char *edge)
         buf = road[num];
         new = (t_road *) ft_memalloc(sizeof(t_road));
         new->edge = ft_strdup(edge);
+        new->len = buf->len + 1;
         new->next = buf;
         road[num] = new;
     }
