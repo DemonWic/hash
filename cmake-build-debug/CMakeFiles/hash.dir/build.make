@@ -928,35 +928,9 @@ CMakeFiles/hash.dir/functions.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hash.dir/functions.c.s"
 	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/ahintz/Desktop/hash_new/functions.c -o CMakeFiles/hash.dir/functions.c.s
 
-CMakeFiles/hash.dir/find_ways.c.o: CMakeFiles/hash.dir/flags.make
-CMakeFiles/hash.dir/find_ways.c.o: ../find_ways.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ahintz/Desktop/hash_new/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object CMakeFiles/hash.dir/find_ways.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/hash.dir/find_ways.c.o   -c /Users/ahintz/Desktop/hash_new/find_ways.c
-
-CMakeFiles/hash.dir/find_ways.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/hash.dir/find_ways.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/ahintz/Desktop/hash_new/find_ways.c > CMakeFiles/hash.dir/find_ways.c.i
-
-CMakeFiles/hash.dir/find_ways.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hash.dir/find_ways.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/ahintz/Desktop/hash_new/find_ways.c -o CMakeFiles/hash.dir/find_ways.c.s
-
-CMakeFiles/hash.dir/go_lem.c.o: CMakeFiles/hash.dir/flags.make
-CMakeFiles/hash.dir/go_lem.c.o: ../go_lem.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ahintz/Desktop/hash_new/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object CMakeFiles/hash.dir/go_lem.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/hash.dir/go_lem.c.o   -c /Users/ahintz/Desktop/hash_new/go_lem.c
-
-CMakeFiles/hash.dir/go_lem.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/hash.dir/go_lem.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/ahintz/Desktop/hash_new/go_lem.c > CMakeFiles/hash.dir/go_lem.c.i
-
-CMakeFiles/hash.dir/go_lem.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hash.dir/go_lem.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/ahintz/Desktop/hash_new/go_lem.c -o CMakeFiles/hash.dir/go_lem.c.s
-
 CMakeFiles/hash.dir/libft/ft_free_str.c.o: CMakeFiles/hash.dir/flags.make
 CMakeFiles/hash.dir/libft/ft_free_str.c.o: ../libft/ft_free_str.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ahintz/Desktop/hash_new/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object CMakeFiles/hash.dir/libft/ft_free_str.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ahintz/Desktop/hash_new/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object CMakeFiles/hash.dir/libft/ft_free_str.c.o"
 	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/hash.dir/libft/ft_free_str.c.o   -c /Users/ahintz/Desktop/hash_new/libft/ft_free_str.c
 
 CMakeFiles/hash.dir/libft/ft_free_str.c.i: cmake_force
@@ -969,7 +943,7 @@ CMakeFiles/hash.dir/libft/ft_free_str.c.s: cmake_force
 
 CMakeFiles/hash.dir/stack.c.o: CMakeFiles/hash.dir/flags.make
 CMakeFiles/hash.dir/stack.c.o: ../stack.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ahintz/Desktop/hash_new/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object CMakeFiles/hash.dir/stack.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ahintz/Desktop/hash_new/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object CMakeFiles/hash.dir/stack.c.o"
 	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/hash.dir/stack.c.o   -c /Users/ahintz/Desktop/hash_new/stack.c
 
 CMakeFiles/hash.dir/stack.c.i: cmake_force
@@ -982,7 +956,7 @@ CMakeFiles/hash.dir/stack.c.s: cmake_force
 
 CMakeFiles/hash.dir/queue.c.o: CMakeFiles/hash.dir/flags.make
 CMakeFiles/hash.dir/queue.c.o: ../queue.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ahintz/Desktop/hash_new/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/hash.dir/queue.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ahintz/Desktop/hash_new/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object CMakeFiles/hash.dir/queue.c.o"
 	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/hash.dir/queue.c.o   -c /Users/ahintz/Desktop/hash_new/queue.c
 
 CMakeFiles/hash.dir/queue.c.i: cmake_force
@@ -995,7 +969,7 @@ CMakeFiles/hash.dir/queue.c.s: cmake_force
 
 CMakeFiles/hash.dir/bfs.c.o: CMakeFiles/hash.dir/flags.make
 CMakeFiles/hash.dir/bfs.c.o: ../bfs.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ahintz/Desktop/hash_new/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/hash.dir/bfs.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ahintz/Desktop/hash_new/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object CMakeFiles/hash.dir/bfs.c.o"
 	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/hash.dir/bfs.c.o   -c /Users/ahintz/Desktop/hash_new/bfs.c
 
 CMakeFiles/hash.dir/bfs.c.i: cmake_force
@@ -1075,8 +1049,6 @@ hash_OBJECTS = \
 "CMakeFiles/hash.dir/main.c.o" \
 "CMakeFiles/hash.dir/read.c.o" \
 "CMakeFiles/hash.dir/functions.c.o" \
-"CMakeFiles/hash.dir/find_ways.c.o" \
-"CMakeFiles/hash.dir/go_lem.c.o" \
 "CMakeFiles/hash.dir/libft/ft_free_str.c.o" \
 "CMakeFiles/hash.dir/stack.c.o" \
 "CMakeFiles/hash.dir/queue.c.o" \
@@ -1152,15 +1124,13 @@ hash: CMakeFiles/hash.dir/libft/get_next_line.c.o
 hash: CMakeFiles/hash.dir/main.c.o
 hash: CMakeFiles/hash.dir/read.c.o
 hash: CMakeFiles/hash.dir/functions.c.o
-hash: CMakeFiles/hash.dir/find_ways.c.o
-hash: CMakeFiles/hash.dir/go_lem.c.o
 hash: CMakeFiles/hash.dir/libft/ft_free_str.c.o
 hash: CMakeFiles/hash.dir/stack.c.o
 hash: CMakeFiles/hash.dir/queue.c.o
 hash: CMakeFiles/hash.dir/bfs.c.o
 hash: CMakeFiles/hash.dir/build.make
 hash: CMakeFiles/hash.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/ahintz/Desktop/hash_new/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Linking C executable hash"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/ahintz/Desktop/hash_new/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Linking C executable hash"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hash.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

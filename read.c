@@ -20,6 +20,7 @@ t_data *ft_read(int fd, int size_map)
     data->start = NULL;
     data->end = NULL;
     data->nodes = (t_node **)ft_memalloc((sizeof(t_node) * size_map));
+    data->roads = (t_road **)ft_memalloc((sizeof(t_road) * size_map));
     if (data->nodes == NULL)
         return NULL;
     while((i = get_next_line(fd,&line)) > 0)

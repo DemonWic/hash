@@ -1,8 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/hash.dir/bfs.c.o"
-  "CMakeFiles/hash.dir/find_ways.c.o"
   "CMakeFiles/hash.dir/functions.c.o"
-  "CMakeFiles/hash.dir/go_lem.c.o"
   "CMakeFiles/hash.dir/libft/ft_atoi.c.o"
   "CMakeFiles/hash.dir/libft/ft_base16_decoder.c.o"
   "CMakeFiles/hash.dir/libft/ft_base16_encoder.c.o"

@@ -7,17 +7,36 @@ int main()
 {
     int fd;
     int i;
+    int j;
     int res;
+    t_road *buf;
 
     i = 0;
+    j = 0;
     res = 1;
     fd = open("../test_rooms.txt", O_RDONLY);
     t_data *all;
     all = ft_read(fd, MAP_SIZE);
     while (res != 0)
     {
-        res = bfs(all, i);
+        res = bfs(all, i, j);
+        j++;
         i += 3;
+    }
+    all->roads_count = --j;
+    i = 0;
+    printf("%i\n", all->roads_count);
+    while(i < j)
+    {
+
+        buf = all->roads[i];
+        while(buf)
+        {
+            printf("%s ", buf->edge);
+            buf = buf->next;
+        }
+        printf("\n");
+        i++;
     }
     ft_datadel(all);
 //    find_ways(all);

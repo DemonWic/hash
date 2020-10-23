@@ -110,10 +110,37 @@ void	ft_nodedel(t_node **alst)
     }
 }
 
+void	ft_roaddelone(t_road **alst)
+{
+    t_road *new_l;
+
+    new_l = *alst;
+    if (new_l)
+    {
+        free(new_l->edge);
+        free(*alst);
+        *alst = NULL;
+    }
+}
+
+void	ft_roaddel(t_road **alst)
+{
+    t_road **buf;
+
+    buf = alst;
+    if (buf)
+    {
+        while ((*buf)->next)
+            ft_roaddel(&(*buf)->next);
+        ft_roaddelone(&(*buf));
+    }
+}
+
 void ft_datadel(t_data *data)
 {
     int i;
     t_node *buf;
+    t_road *buf2;
 
     i = 0;
     while (i < MAP_SIZE)
@@ -126,5 +153,37 @@ void ft_datadel(t_data *data)
         i++;
     }
     free(data->nodes);
+    i = 0;
+    while(i < data->roads_count)
+    {
+        buf2 = data->roads[i];
+        ft_roaddel(&buf2);
+        i++;
+    }
+    free(data->roads);
+    //TODO дописать очистку roads
     free(data);
+}
+
+void    ft_add_edge(t_road **road, int num, char *edge)
+{
+    t_road *new;
+    t_road *buf;
+
+    if (road[num] == NULL)
+    {
+        new = (t_road *) ft_memalloc(sizeof(t_road));
+        new->next = NULL;
+        new->edge = ft_strdup(edge);
+        road[num] = new;
+    }
+    else
+    {
+        buf = road[num];
+        new = (t_road *) ft_memalloc(sizeof(t_road));
+        new->edge = ft_strdup(edge);
+        new->next = buf;
+        road[num] = new;
+    }
+
 }

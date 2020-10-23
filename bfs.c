@@ -4,7 +4,7 @@
 
 #include "lemin.h"
 
-int bfs(t_data *all, int count)
+int bfs(t_data *all, int count, int num)
 {
     t_queue queue;
     ft_quinit(&queue);
@@ -34,7 +34,7 @@ int bfs(t_data *all, int count)
         while (buf[i] != 0)
         {
             n = ft_search(buf[i], all->nodes);
-            if (n->met == count & n->exclude == 0)
+            if (n->met == count && n->exclude == 0)
             { // если вершина смежная и не обнаружена
                 ft_quinsert(&queue, buf[i]);// добавляем ее в очередь
                 n->met += 1;// отмечаем вершину как обнаруженную
@@ -56,7 +56,9 @@ int bfs(t_data *all, int count)
     }
 //    if (res == 0)
 //        return (res);
-    printf("%s ", end);
+    if (res != 0)
+        ft_add_edge(all->roads, num, end);
+//    printf("%s ", end);
     node = ft_strdup(end);
     while (!ft_stkempty(&edges))
     {
@@ -71,7 +73,8 @@ int bfs(t_data *all, int count)
                 n->exclude = 1;
 //                printf("<%s> ", n->name);
             }
-            printf("%s ", node);
+            ft_add_edge(all->roads, num, node);
+//            printf("%s ", node);
         }
         free(e->end);
         e->end = NULL;
@@ -81,6 +84,6 @@ int bfs(t_data *all, int count)
         e = NULL;
     }
     free(node);
-    printf("\n");
+//    printf("\n");
     return (res);
 }

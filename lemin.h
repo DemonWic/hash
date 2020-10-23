@@ -15,6 +15,17 @@
 //
 //}               t_node;
 
+////
+typedef struct s_road
+{
+    char        *edge;
+    struct s_road *next;
+}              t_road;
+
+
+//////
+
+
 typedef struct  s_link
 {
     char        *s1;
@@ -79,9 +90,11 @@ typedef struct  s_data
     t_node      *end;
     t_node      **nodes;
     t_way       *ways[MAP_SIZE];
+    t_road      **roads;
     int         w_count;
     int         col;
     int         ant_count;
+    int         roads_count;
     int         cur_n;
 }               t_data;
 
@@ -104,6 +117,8 @@ typedef struct s_queue {
     int rear;
     int frnt;
 }              t_queue;
+
+
 
 ///
 
@@ -129,6 +144,7 @@ void ft_quinit(t_queue *q);
 int ft_quinsert(t_queue *q, char *s);
 int ft_quempty(t_queue *q);
 char *ft_qupop(t_queue *q);
-int bfs(t_data *all, int count);
+int bfs(t_data *all, int count, int num);
+void    ft_add_edge(t_road **road, int num, char *edge);
 
 #endif
