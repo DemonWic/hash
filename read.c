@@ -21,8 +21,10 @@ t_data *ft_read(int fd, int size_map)
     data->end = NULL;
     data->nodes = (t_node **)ft_memalloc((sizeof(t_node) * size_map));
     data->roads = (t_road **)ft_memalloc((sizeof(t_road) * size_map));
-    if (data->nodes == NULL)
+    if (data->nodes == NULL || data->roads == NULL)
         return NULL;
+    data->roads_count = 0;
+    data->ant_count = 0;
     while((i = get_next_line(fd,&line)) > 0)
     {
         if (ft_strcmp("##start", line) == 0)
@@ -84,6 +86,11 @@ t_data *ft_read(int fd, int size_map)
                 buf3->rel = ft_strchrjoin(buf3->rel, buf[0], ' ');
                 ft_free_str(buf);
                 ft_strdel(&line);
+            }
+            else if (ft_strlen(line) == 0)
+            {
+                ft_strdel(&line);
+                break ;
             }
             else
             {

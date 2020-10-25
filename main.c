@@ -3,7 +3,7 @@
 
 
 
-int main()
+int main(int argc, char **argv)
 {
     int fd;
     int i;
@@ -14,9 +14,23 @@ int main()
     i = 0;
     j = 0;
     res = 1;
-    fd = open("../test_rooms.txt", O_RDONLY);
+    fd = 0;
+    if (argc >= 2)
+    {
+        fd = open(argv[1], O_RDONLY);
+        if (fd < 3)
+        {
+            // ERROR
+            return (1);
+        }
+    }
     t_data *all;
     all = ft_read(fd, MAP_SIZE);
+    if (all->ant_count == 0)
+    {
+        ft_datadel(all);
+        return (1);
+    }
     while (res != 0)
     {
         res = bfs(all, i, j);
