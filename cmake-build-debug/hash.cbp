@@ -86,6 +86,9 @@
 		<Unit filename="/Users/ahintz/Desktop/hash_new/functions.c">
 			<Option target="hash"/>
 		</Unit>
+		<Unit filename="/Users/ahintz/Desktop/hash_new/go_lem.c">
+			<Option target="hash"/>
+		</Unit>
 		<Unit filename="/Users/ahintz/Desktop/hash_new/lemin.h">
 			<Option target="hash"/>
 		</Unit>

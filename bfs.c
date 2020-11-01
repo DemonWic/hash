@@ -43,7 +43,7 @@ int bfs(t_data *all, int count, int num)
                 e->end = ft_strdup(buf[i]);
                 ft_stkpush(&edges, e);
 //              if (node == end)
-                if (n->name == end)
+                if (ft_strcmp(n->name, end) == 0)
                 {
                     res = 1;
                     break;

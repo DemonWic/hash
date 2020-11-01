@@ -9,6 +9,10 @@ CMakeFiles/hash.dir/functions.c.o
  ../libft/libft.h
  /Users/ahintz/Desktop/hash_new/functions.c
  /Users/ahintz/Desktop/hash_new/lemin.h
+CMakeFiles/hash.dir/go_lem.c.o
+ ../libft/libft.h
+ /Users/ahintz/Desktop/hash_new/go_lem.c
+ /Users/ahintz/Desktop/hash_new/lemin.h
 CMakeFiles/hash.dir/libft/ft_atoi.c.o
  /Users/ahintz/Desktop/hash_new/libft/ft_atoi.c
  /Users/ahintz/Desktop/hash_new/libft/libft.h

@@ -177,6 +177,33 @@ functions.c.s:
 	$(MAKE) -f CMakeFiles/hash.dir/build.make CMakeFiles/hash.dir/functions.c.s
 .PHONY : functions.c.s
 
+go_lem.o: go_lem.c.o
+
+.PHONY : go_lem.o
+
+# target to build an object file
+go_lem.c.o:
+	$(MAKE) -f CMakeFiles/hash.dir/build.make CMakeFiles/hash.dir/go_lem.c.o
+.PHONY : go_lem.c.o
+
+go_lem.i: go_lem.c.i
+
+.PHONY : go_lem.i
+
+# target to preprocess a source file
+go_lem.c.i:
+	$(MAKE) -f CMakeFiles/hash.dir/build.make CMakeFiles/hash.dir/go_lem.c.i
+.PHONY : go_lem.c.i
+
+go_lem.s: go_lem.c.s
+
+.PHONY : go_lem.s
+
+# target to generate assembly for a file
+go_lem.c.s:
+	$(MAKE) -f CMakeFiles/hash.dir/build.make CMakeFiles/hash.dir/go_lem.c.s
+.PHONY : go_lem.c.s
+
 libft/ft_atoi.o: libft/ft_atoi.c.o
 
 .PHONY : libft/ft_atoi.o
@@ -2055,6 +2082,9 @@ help:
 	@echo "... functions.o"
 	@echo "... functions.i"
 	@echo "... functions.s"
+	@echo "... go_lem.o"
+	@echo "... go_lem.i"
+	@echo "... go_lem.s"
 	@echo "... libft/ft_atoi.o"
 	@echo "... libft/ft_atoi.i"
 	@echo "... libft/ft_atoi.s"

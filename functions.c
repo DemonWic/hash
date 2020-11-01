@@ -161,7 +161,6 @@ void ft_datadel(t_data *data)
         i++;
     }
     free(data->roads);
-    //TODO дописать очистку roads
     free(data);
 }
 
@@ -187,5 +186,14 @@ void    ft_add_edge(t_road **road, int num, char *edge)
         new->next = buf;
         road[num] = new;
     }
+}
 
+void    ft_error(char *mes)
+{
+    if (mes != NULL && ft_strlen(mes) != 0)
+    {
+        ft_putstr(mes);
+        ft_putchar('\n');
+    }
+    exit(1);
 }

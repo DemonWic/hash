@@ -72,8 +72,7 @@ typedef struct  s_fdata
 
 typedef struct  s_lem
 {
-    t_way       *way;
-    char        *pos;
+    t_road      *road;
     int         n;
     int         finished;
 }               t_lem;
@@ -90,9 +89,9 @@ typedef struct  s_data
     t_node      *start;
     t_node      *end;
     t_node      **nodes;
-    t_way       *ways[MAP_SIZE];
     t_road      **roads;
-    int         w_count;
+    char        **lines;
+    int         lines_count;
     int         col;
     int         ant_count;
     int         roads_count;
@@ -147,5 +146,6 @@ int ft_quempty(t_queue *q);
 char *ft_qupop(t_queue *q);
 int bfs(t_data *all, int count, int num);
 void    ft_add_edge(t_road **road, int num, char *edge);
+void    ft_error(char *mes);
 
 #endif
