@@ -25,16 +25,10 @@ t_data *init_data(int size_map)
    return (data);
 }
 
-void  add_node(t_data *data, char *line, int size_map)
+t_node *new_node(t_data *data, char **buf)
 {
     t_node *new;
-    t_node *uk;
-    char **buf;
-    int id;
 
-    data->lines[data->lines_count++] = ft_strdup(line);
-    buf = ft_strsplit(line, ' ');
-    id = ft_hash(buf[0], size_map);
     new = (t_node *)ft_memalloc(sizeof(t_node));
     if (new == NULL)
         data->check = -1;
@@ -45,6 +39,20 @@ void  add_node(t_data *data, char *line, int size_map)
     new->exclude = 0;
     new->marker = data->check;
     new->rel = NULL;
+    return (new);
+}
+
+void  add_node(t_data *data, char *line, int size_map)
+{
+    t_node *new;
+    t_node *uk;
+    char **buf;
+    int id;
+
+    data->lines[data->lines_count++] = ft_strdup(line);
+    buf = ft_strsplit(line, ' ');
+    id = ft_hash(buf[0], size_map);
+    new = new_node(data, buf);
     if (data->nodes[id] != NULL)
     {
         uk = data->nodes[id];
@@ -54,14 +62,20 @@ void  add_node(t_data *data, char *line, int size_map)
     }
     else
         data->nodes[id] = new;
-    if (data->check == 1)
+    if (data->check == 3)
+    {
         if (data->start != NULL)
             data->check = -1;
         data->start = new;
-    if (data->check == 2)
+        data->check = 0;
+    }
+    else if (data->check == 4)
+    {
         if (data->end != NULL)
             data->check = -1;
         data->end = new;
+        data->check = 0;
+    }
     ft_free_str(buf);
     data->check = 0;
 }
@@ -84,12 +98,12 @@ int check_sharp(t_data *data, char *line)
 {
     if (ft_strcmp("##start", line) == 0)
     {
-        data->check = 1;
+        data->check = 3;
         data->lines[data->lines_count++] = ft_strdup(line);
     }
     else if (ft_strcmp("##end", line) == 0)
     {
-        data->check = 2;
+        data->check = 4;
         data->lines[data->lines_count++] = ft_strdup(line);
     }
     else if (line[0] == '#')
@@ -114,10 +128,7 @@ int check_line(t_data *data, char *line, int size_map)
     else if (ft_strchr(line, '-'))
         add_rel(data, line);
     else if (ft_strlen(line) == 0)
-    {
-//        data->lines[data->lines_count++] = ft_strdup(line);
         return (1);
-    }
     else if (ft_isnumber(line))
         {
         data->lines[data->lines_count++] = ft_strdup(line);

@@ -29,14 +29,56 @@ int short_path(t_data *all)
     return (res);
 }
 
+
+void free_edge(t_edge *e)
+{
+    free(e->end);
+    e->end = NULL;
+    free(e->begin);
+    e->begin = NULL;
+    free(e);
+    e = NULL;
+}
+
+void  build_path(t_data *all, t_stack *edges, int num, int res)
+{
+    char *node;
+    t_node *n;
+    t_edge *e;
+
+    if (res != 0)
+    {
+        ft_add_edge(all->roads, num, all->end->name);
+        all->roads_count++;
+    }
+    node = ft_strdup(all->end->name);
+    while (!ft_stkempty(edges))
+    {
+        e = ft_stkpop(edges);
+        if (!ft_strcmp(e->end,node))
+        {
+            free(node);
+            node = ft_strdup(e->begin);
+            if (ft_strcmp(node, all->start->name))
+            {
+                n = ft_search(node, all->nodes);
+                n->exclude = 1;
+            }
+            ft_add_edge(all->roads, num, node);
+        }
+        free_edge(e);
+    }
+    free(node);
+}
+
+
+
 int bfs(t_data *all, int count, int num)
 {
     t_queue queue;
     ft_quinit(&queue);
     t_stack edges;
     ft_stkinit(&edges);
-    char *start;
-    char *end;
     char *node;
     char **buf;
     int i;
@@ -45,11 +87,9 @@ int bfs(t_data *all, int count, int num)
     t_node *n;
 
     res = 0;
-    start = all->start->name;
-    end = all->end->name;
     if (short_path(all))
         return (0);
-    ft_quinsert(&queue, start);
+    ft_quinsert(&queue, all->start->name);
     all->start->met += 1;
     while (!ft_quempty(&queue))
     {
@@ -69,8 +109,7 @@ int bfs(t_data *all, int count, int num)
                 e->begin = ft_strdup(node);
                 e->end = ft_strdup(buf[i]);
                 ft_stkpush(&edges, e);
-//              if (node == end)
-                if (ft_strcmp(n->name, end) == 0)
+                if (ft_strcmp(n->name, all->end->name) == 0)
                 {
                     res = 1;
                     break;
@@ -81,39 +120,6 @@ int bfs(t_data *all, int count, int num)
         free(node);
         ft_free_str(buf);
     }
-//    if (res == 0)
-//        return (res);
-    if (res != 0)
-    {
-        ft_add_edge(all->roads, num, end);
-        all->roads_count++;
-    }
-//    printf("%s ", end);
-    node = ft_strdup(end);
-    while (!ft_stkempty(&edges))
-    {
-        e = ft_stkpop(&edges);
-        if (!ft_strcmp(e->end,node))
-        {
-            free(node);
-            node = ft_strdup(e->begin);
-            if (ft_strcmp(node, start))
-            {
-                n = ft_search(node, all->nodes);
-                n->exclude = 1;
-//                printf("<%s> ", n->name);
-            }
-            ft_add_edge(all->roads, num, node);
-//            printf("%s ", node);
-        }
-        free(e->end);
-        e->end = NULL;
-        free(e->begin);
-        e->begin = NULL;
-        free(e);
-        e = NULL;
-    }
-    free(node);
-//    printf("\n");
+    build_path(all, &edges, num, res);
     return (res);
 }

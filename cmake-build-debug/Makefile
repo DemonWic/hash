@@ -177,32 +177,32 @@ functions.c.s:
 	$(MAKE) -f CMakeFiles/hash.dir/build.make CMakeFiles/hash.dir/functions.c.s
 .PHONY : functions.c.s
 
-go_lem.o: go_lem.c.o
+go_lem2.o: go_lem2.c.o
 
-.PHONY : go_lem.o
+.PHONY : go_lem2.o
 
 # target to build an object file
-go_lem.c.o:
-	$(MAKE) -f CMakeFiles/hash.dir/build.make CMakeFiles/hash.dir/go_lem.c.o
-.PHONY : go_lem.c.o
+go_lem2.c.o:
+	$(MAKE) -f CMakeFiles/hash.dir/build.make CMakeFiles/hash.dir/go_lem2.c.o
+.PHONY : go_lem2.c.o
 
-go_lem.i: go_lem.c.i
+go_lem2.i: go_lem2.c.i
 
-.PHONY : go_lem.i
+.PHONY : go_lem2.i
 
 # target to preprocess a source file
-go_lem.c.i:
-	$(MAKE) -f CMakeFiles/hash.dir/build.make CMakeFiles/hash.dir/go_lem.c.i
-.PHONY : go_lem.c.i
+go_lem2.c.i:
+	$(MAKE) -f CMakeFiles/hash.dir/build.make CMakeFiles/hash.dir/go_lem2.c.i
+.PHONY : go_lem2.c.i
 
-go_lem.s: go_lem.c.s
+go_lem2.s: go_lem2.c.s
 
-.PHONY : go_lem.s
+.PHONY : go_lem2.s
 
 # target to generate assembly for a file
-go_lem.c.s:
-	$(MAKE) -f CMakeFiles/hash.dir/build.make CMakeFiles/hash.dir/go_lem.c.s
-.PHONY : go_lem.c.s
+go_lem2.c.s:
+	$(MAKE) -f CMakeFiles/hash.dir/build.make CMakeFiles/hash.dir/go_lem2.c.s
+.PHONY : go_lem2.c.s
 
 libft/ft_atoi.o: libft/ft_atoi.c.o
 
@@ -2082,9 +2082,9 @@ help:
 	@echo "... functions.o"
 	@echo "... functions.i"
 	@echo "... functions.s"
-	@echo "... go_lem.o"
-	@echo "... go_lem.i"
-	@echo "... go_lem.s"
+	@echo "... go_lem2.o"
+	@echo "... go_lem2.i"
+	@echo "... go_lem2.s"
 	@echo "... libft/ft_atoi.o"
 	@echo "... libft/ft_atoi.i"
 	@echo "... libft/ft_atoi.s"

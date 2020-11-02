@@ -17,12 +17,13 @@ int main()
     j = 0;
     res = 1;
     fd = 0;
-    fd = open("../test3.txt", O_RDONLY);
+    fd = open("../test_rooms.txt", O_RDONLY);
     if (read(fd, test, 0) == -1)
         ft_error("ERROR");
     t_data *all;
     all = ft_read(fd, MAP_SIZE);
-    if (all == NULL || all->ant_count == 0 || all->start == NULL || all->end == NULL || all->start->rel == NULL || all->end->rel == NULL)
+    if (all == NULL || all->ant_count == 0 || all->start == NULL\
+        || all->end == NULL || all->start->rel == NULL || all->end->rel == NULL)
     {
         ft_datadel(all);
         ft_error("ERROR");
@@ -33,7 +34,6 @@ int main()
         j++;
         i += 3;
     }
-//    all->roads_count = --j;
     j--;
     i = 0;
     printf("%i\n", all->roads_count);
@@ -51,12 +51,14 @@ int main()
         i++;
     }
     i = 0;
+    char *buf2;
     while (i < all->lines_count)
     {
-        printf("%s\n", all->lines[i]);
+        buf2 = all->lines[i];
+        printf("%s\n", buf2);
         i++;
     }
-//    go_lem(all);
+    go_lem(all);
     ft_datadel(all);
     return 0;
 }

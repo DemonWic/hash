@@ -980,18 +980,18 @@ CMakeFiles/hash.dir/bfs.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hash.dir/bfs.c.s"
 	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/ahintz/Desktop/hash_new/bfs.c -o CMakeFiles/hash.dir/bfs.c.s
 
-CMakeFiles/hash.dir/go_lem.c.o: CMakeFiles/hash.dir/flags.make
-CMakeFiles/hash.dir/go_lem.c.o: ../go_lem.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ahintz/Desktop/hash_new/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/hash.dir/go_lem.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/hash.dir/go_lem.c.o   -c /Users/ahintz/Desktop/hash_new/go_lem.c
+CMakeFiles/hash.dir/go_lem2.c.o: CMakeFiles/hash.dir/flags.make
+CMakeFiles/hash.dir/go_lem2.c.o: ../go_lem2.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ahintz/Desktop/hash_new/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/hash.dir/go_lem2.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/hash.dir/go_lem2.c.o   -c /Users/ahintz/Desktop/hash_new/go_lem2.c
 
-CMakeFiles/hash.dir/go_lem.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/hash.dir/go_lem.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/ahintz/Desktop/hash_new/go_lem.c > CMakeFiles/hash.dir/go_lem.c.i
+CMakeFiles/hash.dir/go_lem2.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/hash.dir/go_lem2.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/ahintz/Desktop/hash_new/go_lem2.c > CMakeFiles/hash.dir/go_lem2.c.i
 
-CMakeFiles/hash.dir/go_lem.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hash.dir/go_lem.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/ahintz/Desktop/hash_new/go_lem.c -o CMakeFiles/hash.dir/go_lem.c.s
+CMakeFiles/hash.dir/go_lem2.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hash.dir/go_lem2.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/ahintz/Desktop/hash_new/go_lem2.c -o CMakeFiles/hash.dir/go_lem2.c.s
 
 # Object files for target hash
 hash_OBJECTS = \
@@ -1066,7 +1066,7 @@ hash_OBJECTS = \
 "CMakeFiles/hash.dir/stack.c.o" \
 "CMakeFiles/hash.dir/queue.c.o" \
 "CMakeFiles/hash.dir/bfs.c.o" \
-"CMakeFiles/hash.dir/go_lem.c.o"
+"CMakeFiles/hash.dir/go_lem2.c.o"
 
 # External object files for target hash
 hash_EXTERNAL_OBJECTS =
@@ -1142,7 +1142,7 @@ hash: CMakeFiles/hash.dir/libft/ft_free_str.c.o
 hash: CMakeFiles/hash.dir/stack.c.o
 hash: CMakeFiles/hash.dir/queue.c.o
 hash: CMakeFiles/hash.dir/bfs.c.o
-hash: CMakeFiles/hash.dir/go_lem.c.o
+hash: CMakeFiles/hash.dir/go_lem2.c.o
 hash: CMakeFiles/hash.dir/build.make
 hash: CMakeFiles/hash.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/ahintz/Desktop/hash_new/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Linking C executable hash"

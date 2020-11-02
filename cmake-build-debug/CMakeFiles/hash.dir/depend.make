@@ -9,9 +9,9 @@ CMakeFiles/hash.dir/functions.c.o: ../libft/libft.h
 CMakeFiles/hash.dir/functions.c.o: ../functions.c
 CMakeFiles/hash.dir/functions.c.o: ../lemin.h
 
-CMakeFiles/hash.dir/go_lem.c.o: ../libft/libft.h
-CMakeFiles/hash.dir/go_lem.c.o: ../go_lem.c
-CMakeFiles/hash.dir/go_lem.c.o: ../lemin.h
+CMakeFiles/hash.dir/go_lem2.c.o: ../libft/libft.h
+CMakeFiles/hash.dir/go_lem2.c.o: ../go_lem2.c
+CMakeFiles/hash.dir/go_lem2.c.o: ../lemin.h
 
 CMakeFiles/hash.dir/libft/ft_atoi.c.o: ../libft/ft_atoi.c
 CMakeFiles/hash.dir/libft/ft_atoi.c.o: ../libft/libft.h
