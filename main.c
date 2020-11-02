@@ -22,7 +22,7 @@ int main()
         ft_error("ERROR");
     t_data *all;
     all = ft_read(fd, MAP_SIZE);
-    if (all == NULL || all->ant_count == 0 || all->start == NULL || all->end == NULL)
+    if (all == NULL || all->ant_count == 0 || all->start == NULL || all->end == NULL || all->start->rel == NULL || all->end->rel == NULL)
     {
         ft_datadel(all);
         ft_error("ERROR");
@@ -56,7 +56,7 @@ int main()
         printf("%s\n", all->lines[i]);
         i++;
     }
-    go_lem(all);
+//    go_lem(all);
     ft_datadel(all);
     return 0;
 }

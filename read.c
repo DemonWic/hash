@@ -32,7 +32,6 @@ void  add_node(t_data *data, char *line, int size_map)
     char **buf;
     int id;
 
-
     data->lines[data->lines_count++] = ft_strdup(line);
     buf = ft_strsplit(line, ' ');
     id = ft_hash(buf[0], size_map);
@@ -45,6 +44,7 @@ void  add_node(t_data *data, char *line, int size_map)
     new->met = 0;
     new->exclude = 0;
     new->marker = data->check;
+    new->rel = NULL;
     if (data->nodes[id] != NULL)
     {
         uk = data->nodes[id];
@@ -115,10 +115,10 @@ int check_line(t_data *data, char *line, int size_map)
         add_rel(data, line);
     else if (ft_strlen(line) == 0)
     {
-        data->lines[data->lines_count++] = ft_strdup(line);
+//        data->lines[data->lines_count++] = ft_strdup(line);
         return (1);
     }
-    else
+    else if (ft_isnumber(line))
         {
         data->lines[data->lines_count++] = ft_strdup(line);
         data->ant_count = ft_atoi(line);

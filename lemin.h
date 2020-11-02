@@ -148,5 +148,6 @@ char *ft_qupop(t_queue *q);
 int bfs(t_data *all, int count, int num);
 void    ft_add_edge(t_road **road, int num, char *edge);
 void    ft_error(char *mes);
+int     ft_isnumber(char *str);
 
 #endif
