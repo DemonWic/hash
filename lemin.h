@@ -1,7 +1,7 @@
 
 #ifndef HASH_LEMIN_H
 #define HASH_LEMIN_H
-#define MAP_SIZE 4000
+#define MAP_SIZE 100000
 
 #include "libft.h"
 //typedef struct  s_room
@@ -96,6 +96,7 @@ typedef struct  s_data
     int         ant_count;
     int         roads_count;
     int         cur_n;
+    int         check;
 }               t_data;
 
 

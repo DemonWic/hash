@@ -10,25 +10,22 @@ int main()
     int i;
     int j;
     int res;
+    char *test;
     t_road *buf;
 
     i = 0;
     j = 0;
     res = 1;
     fd = 0;
-    fd = open("../test_rooms.txt", O_RDONLY);
-//    if (argc >= 2)
-//    {
-//        fd = open(argv[1], O_RDONLY);
-//        if (fd < 3)
-//            ft_error("ERROR");
-//    }
+    fd = open("../test3.txt", O_RDONLY);
+    if (read(fd, test, 0) == -1)
+        ft_error("ERROR");
     t_data *all;
     all = ft_read(fd, MAP_SIZE);
-    if (all->ant_count == 0)
+    if (all == NULL || all->ant_count == 0 || all->start == NULL || all->end == NULL)
     {
         ft_datadel(all);
-        return (1);
+        ft_error("ERROR");
     }
     while (res != 0)
     {
@@ -36,7 +33,8 @@ int main()
         j++;
         i += 3;
     }
-    all->roads_count = --j;
+//    all->roads_count = --j;
+    j--;
     i = 0;
     printf("%i\n", all->roads_count);
     while(i < j)
@@ -52,10 +50,14 @@ int main()
         printf("\n");
         i++;
     }
+    i = 0;
+    while (i < all->lines_count)
+    {
+        printf("%s\n", all->lines[i]);
+        i++;
+    }
     go_lem(all);
     ft_datadel(all);
-//    find_ways(all);
-//    go_lem(all);
     return 0;
 }
 

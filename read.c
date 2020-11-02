@@ -5,101 +5,150 @@
 #include "lemin.h"
 
 
-t_data *ft_read(int fd, int size_map)
+t_data *init_data(int size_map)
 {
-    int i;
-    int id;
-    int k;
-    char *line;
-    char **buf;
     t_data *data;
 
-    k = 0;
-    buf = NULL;
+    data = NULL;
     data = (t_data *)ft_memalloc(sizeof(t_data));
     data->start = NULL;
     data->end = NULL;
     data->nodes = (t_node **)ft_memalloc((sizeof(t_node) * size_map));
     data->roads = (t_road **)ft_memalloc((sizeof(t_road) * size_map));
-    if (data->nodes == NULL || data->roads == NULL)
+    data->lines = (char **)ft_memalloc((sizeof(char *) * size_map));
+    if (data->nodes == NULL || data->roads == NULL || data->lines == NULL)
         return NULL;
     data->roads_count = 0;
     data->ant_count = 0;
+    data->lines_count = 0;
+    data->check  = 0;
+   return (data);
+}
+
+void  add_node(t_data *data, char *line, int size_map)
+{
+    t_node *new;
+    t_node *uk;
+    char **buf;
+    int id;
+
+
+    data->lines[data->lines_count++] = ft_strdup(line);
+    buf = ft_strsplit(line, ' ');
+    id = ft_hash(buf[0], size_map);
+    new = (t_node *)ft_memalloc(sizeof(t_node));
+    if (new == NULL)
+        data->check = -1;
+    new->name = ft_strdup(buf[0]);
+    new->x = ft_atoi(buf[1]);
+    new->y = ft_atoi(buf[2]);
+    new->met = 0;
+    new->exclude = 0;
+    new->marker = data->check;
+    if (data->nodes[id] != NULL)
+    {
+        uk = data->nodes[id];
+        while(uk->next != NULL)
+            uk = uk->next;
+        uk->next = new;
+    }
+    else
+        data->nodes[id] = new;
+    if (data->check == 1)
+        if (data->start != NULL)
+            data->check = -1;
+        data->start = new;
+    if (data->check == 2)
+        if (data->end != NULL)
+            data->check = -1;
+        data->end = new;
+    ft_free_str(buf);
+    data->check = 0;
+}
+
+void  add_rel(t_data *data, char *line)
+{
+    char **buf;
+    t_node *buf3;
+
+    data->lines[data->lines_count++] = ft_strdup(line);
+    buf = ft_strsplit(line, '-');
+    buf3 = ft_search(buf[0], data->nodes);
+    buf3->rel = ft_strchrjoin(buf3->rel, buf[1], ' ');
+    buf3 = ft_search(buf[1], data->nodes);
+    buf3->rel = ft_strchrjoin(buf3->rel, buf[0], ' ');
+    ft_free_str(buf);
+}
+
+int check_sharp(t_data *data, char *line)
+{
+    if (ft_strcmp("##start", line) == 0)
+    {
+        data->check = 1;
+        data->lines[data->lines_count++] = ft_strdup(line);
+    }
+    else if (ft_strcmp("##end", line) == 0)
+    {
+        data->check = 2;
+        data->lines[data->lines_count++] = ft_strdup(line);
+    }
+    else if (line[0] == '#')
+    {
+        data->lines[data->lines_count++] = ft_strdup(line);
+    }
+    else if (line[0] == 'L')
+        return (-1);
+    return (0);
+}
+
+int check_line(t_data *data, char *line, int size_map)
+{
+    if (line[0] == '#' || line[0] == 'L')
+        return (check_sharp(data, line));
+    else if (ft_strchr(line, ' '))
+    {
+        add_node(data, line, size_map);
+        if (data->check == -1)
+            return (-1);
+    }
+    else if (ft_strchr(line, '-'))
+        add_rel(data, line);
+    else if (ft_strlen(line) == 0)
+    {
+        data->lines[data->lines_count++] = ft_strdup(line);
+        return (1);
+    }
+    else
+        {
+        data->lines[data->lines_count++] = ft_strdup(line);
+        data->ant_count = ft_atoi(line);
+        }
+    return (0);
+}
+
+
+t_data *ft_read(int fd, int size_map)
+{
+    int i;
+    int k;
+    char *line;
+    t_data *data;
+
+    k = 0;
+    data = init_data(size_map);
+    if (data == NULL)
+        return (NULL);
     while((i = get_next_line(fd,&line)) > 0)
     {
-        if (ft_strcmp("##start", line) == 0)
-        {
-            k = 1;
-            ft_strdel(&line);
-            continue;
-        }
-        else if (ft_strcmp("##end", line) == 0)
-        {
-            k = 2;
-            ft_strdel(&line);
-            continue;
-        }
-        else if (line[0] == '#' || line[0] == 'L')
+        k = check_line(data, line, size_map);
+        if (k == -1)
+            return (NULL);
+        else if (k == 1)
         {
             ft_strdel(&line);
-            continue;
+            break;
         }
-        else
-        {
-            if (ft_strchr(line, ' '))
-            {
-                buf = ft_strsplit(line, ' ');  //можно присваивать сразу массив и ничего не копировать ?
-                id = ft_hash(buf[0], size_map);
-                t_node *buf2= (t_node *)ft_memalloc(sizeof(t_node));
-                if (buf2 == NULL)
-                    return NULL;
-                buf2->name = ft_strdup(buf[0]);
-                buf2->x = ft_atoi(buf[1]);
-                buf2->y = ft_atoi(buf[2]);
-                buf2->met = 0;
-                buf2->exclude = 0;
-                buf2->marker = k;
-                if (data->nodes[id] != NULL)
-                {
-                    t_node *buff = data->nodes[id];
-                    while(buff->next != NULL)
-                        buff = buff->next;
-                    buff->next = buf2;
-                }
-                else
-                    data->nodes[id] = buf2;
-                if (k == 1)
-                    data->start = buf2;
-                if (k == 2)
-                    data->end = buf2;
-                k = 0;
-                ft_free_str(buf);
-                ft_strdel(&line);
-            }
-            else if (ft_strchr(line, '-'))
-            {
-                buf = ft_strsplit(line, '-');
-                t_node *buf3;
-                buf3 = ft_search(buf[0], data->nodes);
-                buf3->rel = ft_strchrjoin(buf3->rel, buf[1], ' ');
-                buf3 = ft_search(buf[1], data->nodes);
-                buf3->rel = ft_strchrjoin(buf3->rel, buf[0], ' ');
-                ft_free_str(buf);
-                ft_strdel(&line);
-            }
-            else if (ft_strlen(line) == 0)
-            {
-                ft_strdel(&line);
-                break ;
-            }
-            else
-            {
-                data->ant_count = ft_atoi(line);
-                ft_strdel(&line);
-            }
-
-        }
-
+        ft_strdel(&line);
     }
     return data;
 }

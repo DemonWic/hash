@@ -4,6 +4,31 @@
 
 #include "lemin.h"
 
+int short_path(t_data *all)
+{
+    char **buf;
+    int i;
+    int res;
+
+    i = 0;
+    res = 0;
+    buf = ft_strsplit(all->start->rel, ' ');
+    while(buf[i] != 0)
+    {
+        if (ft_strcmp(buf[i], all->end->name) == 0)
+        {
+            ft_add_edge(all->roads, res, all->end->name);
+            ft_add_edge(all->roads, res, all->start->name);
+            all->roads_count++;
+            res = 1;
+            break ;
+        }
+        i++;
+    }
+    ft_free_str(buf);
+    return (res);
+}
+
 int bfs(t_data *all, int count, int num)
 {
     t_queue queue;
@@ -22,6 +47,8 @@ int bfs(t_data *all, int count, int num)
     res = 0;
     start = all->start->name;
     end = all->end->name;
+    if (short_path(all))
+        return (0);
     ft_quinsert(&queue, start);
     all->start->met += 1;
     while (!ft_quempty(&queue))
@@ -57,7 +84,10 @@ int bfs(t_data *all, int count, int num)
 //    if (res == 0)
 //        return (res);
     if (res != 0)
+    {
         ft_add_edge(all->roads, num, end);
+        all->roads_count++;
+    }
 //    printf("%s ", end);
     node = ft_strdup(end);
     while (!ft_stkempty(&edges))

@@ -161,6 +161,13 @@ void ft_datadel(t_data *data)
         i++;
     }
     free(data->roads);
+    i = 0;
+    while(i < data->lines_count)
+    {
+        free(data->lines[i]);
+        i++;
+    }
+    free(data->lines);
     free(data);
 }
 
