@@ -22,6 +22,7 @@ t_data *init_data(int size_map)
     data->ant_count = 0;
     data->lines_count = 0;
     data->check  = 0;
+    data->invalid = 0;
    return (data);
 }
 
@@ -42,17 +43,11 @@ t_node *new_node(t_data *data, char **buf)
     return (new);
 }
 
-void  add_node(t_data *data, char *line, int size_map)
-{
-    t_node *new;
-    t_node *uk;
-    char **buf;
-    int id;
 
-    data->lines[data->lines_count++] = ft_strdup(line);
-    buf = ft_strsplit(line, ' ');
-    id = ft_hash(buf[0], size_map);
-    new = new_node(data, buf);
+void push_node(t_data *data, t_node *new, int id)
+{
+    t_node *uk;
+
     if (data->nodes[id] != NULL)
     {
         uk = data->nodes[id];
@@ -62,6 +57,10 @@ void  add_node(t_data *data, char *line, int size_map)
     }
     else
         data->nodes[id] = new;
+}
+
+void  add_start_end(t_data *data, t_node *new)
+{
     if (data->check == 3)
     {
         if (data->start != NULL)
@@ -76,6 +75,21 @@ void  add_node(t_data *data, char *line, int size_map)
         data->end = new;
         data->check = 0;
     }
+}
+
+void  add_node(t_data *data, char *line, int size_map)
+{
+    t_node *new;
+    char **buf;
+    int id;
+
+    data->lines[data->lines_count++] = ft_strdup(line);
+    buf = ft_strsplit(line, ' ');
+    id = ft_hash(buf[0], size_map);
+    new = new_node(data, buf);
+    push_node(data, new, id);
+    if (data->check == 3 || data->check == 4)
+        add_start_end(data, new);
     ft_free_str(buf);
     data->check = 0;
 }
@@ -134,6 +148,11 @@ int check_line(t_data *data, char *line, int size_map)
         data->lines[data->lines_count++] = ft_strdup(line);
         data->ant_count = ft_atoi(line);
         }
+    else
+        {
+        data->invalid = 1; // возможно можно убрать, надо проверить если будет много строк
+        return (-1);
+    }
     return (0);
 }
 

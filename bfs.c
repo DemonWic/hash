@@ -40,17 +40,22 @@ void free_edge(t_edge *e)
     e = NULL;
 }
 
+void  end_path(t_data *all, int num, int res)
+{
+    if (res != 0)
+    {
+        ft_add_edge(all->roads, num, all->end->name);
+        all->roads_count++;
+    }
+}
+
 void  build_path(t_data *all, t_stack *edges, int num, int res)
 {
     char *node;
     t_node *n;
     t_edge *e;
 
-    if (res != 0)
-    {
-        ft_add_edge(all->roads, num, all->end->name);
-        all->roads_count++;
-    }
+    end_path(all, num, res);
     node = ft_strdup(all->end->name);
     while (!ft_stkempty(edges))
     {

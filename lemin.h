@@ -97,6 +97,7 @@ typedef struct  s_data
     int         roads_count;
     int         cur_n;
     int         check;
+    int         invalid;
 }               t_data;
 
 

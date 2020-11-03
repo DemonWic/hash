@@ -23,7 +23,7 @@ int main()
     t_data *all;
     all = ft_read(fd, MAP_SIZE);
     if (all == NULL || all->ant_count == 0 || all->start == NULL\
-        || all->end == NULL || all->start->rel == NULL || all->end->rel == NULL)
+        || all->end == NULL || all->start->rel == NULL || all->end->rel == NULL || all->invalid == 1)
     {
         ft_datadel(all);
         ft_error("ERROR");
