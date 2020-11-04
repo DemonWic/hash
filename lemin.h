@@ -16,6 +16,28 @@
 //}               t_node;
 
 ////
+///
+
+typedef struct s_edge {
+    char *begin;
+    char *end;
+}               t_edge;
+
+typedef struct s_stack {
+    t_edge *elem[MAP_SIZE];
+    int top;
+}               t_stack;
+
+
+typedef struct s_queue {
+    char *qu[MAP_SIZE + 1];
+    int rear;
+    int frnt;
+}              t_queue;
+
+
+
+///
 typedef struct s_road
 {
     char        *edge;
@@ -98,31 +120,12 @@ typedef struct  s_data
     int         cur_n;
     int         check;
     int         invalid;
+    t_queue     queue;
+    t_stack     edges;
 }               t_data;
 
 
-///
 
-typedef struct s_edge {
-    char *begin;
-    char *end;
-}               t_edge;
-
-typedef struct s_stack {
-    t_edge *elem[MAP_SIZE];
-    int top;
-}               t_stack;
-
-
-typedef struct s_queue {
-    char *qu[MAP_SIZE + 1];
-    int rear;
-    int frnt;
-}              t_queue;
-
-
-
-///
 
 
 

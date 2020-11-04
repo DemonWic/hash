@@ -77,54 +77,61 @@ void  build_path(t_data *all, t_stack *edges, int num, int res)
 }
 
 
+int     check_rel(t_data *all, char **buf, int count, char *node)
+{
+    t_edge *e;
+    t_node *n;
+    int i;
+
+    i = 0;
+    while (buf[i] != 0)
+    {
+        n = ft_search(buf[i], all->nodes);
+        if (n->met == count && n->exclude == 0)
+        {
+            ft_quinsert(&all->queue, buf[i]);
+            n->met += 1;
+            e = (t_edge *)ft_memalloc(sizeof(t_edge));
+            e->begin = ft_strdup(node);
+            e->end = ft_strdup(buf[i]);
+            ft_stkpush(&all->edges, e);
+            if (ft_strcmp(n->name, all->end->name) == 0)
+                return (1);
+        }
+        i++;
+    }
+    return (0);
+}
+
+void  init_conteiners(t_data *all)
+{
+    ft_quinit(&all->queue);
+    ft_stkinit(&all->edges);
+    ft_quinsert(&all->queue, all->start->name);
+    all->start->met += 1;
+}
 
 int bfs(t_data *all, int count, int num)
 {
-    t_queue queue;
-    ft_quinit(&queue);
-    t_stack edges;
-    ft_stkinit(&edges);
     char *node;
     char **buf;
-    int i;
     int res;
-    t_edge *e;
     t_node *n;
 
     res = 0;
     if (short_path(all))
         return (0);
-    ft_quinsert(&queue, all->start->name);
-    all->start->met += 1;
-    while (!ft_quempty(&queue))
+    init_conteiners(all);
+    while (!ft_quempty(&all->queue))
     {
-        node = ft_qupop(&queue);
+        node = ft_qupop(&all->queue);
         n = ft_search(node, all->nodes);
         n->met += 2;
         buf = ft_strsplit(n->rel, ' ');
-        i = 0;
-        while (buf[i] != 0)
-        {
-            n = ft_search(buf[i], all->nodes);
-            if (n->met == count && n->exclude == 0)
-            { // если вершина смежная и не обнаружена
-                ft_quinsert(&queue, buf[i]);// добавляем ее в очередь
-                n->met += 1;// отмечаем вершину как обнаруженную
-                e = (t_edge *)ft_memalloc(sizeof(t_edge));
-                e->begin = ft_strdup(node);
-                e->end = ft_strdup(buf[i]);
-                ft_stkpush(&edges, e);
-                if (ft_strcmp(n->name, all->end->name) == 0)
-                {
-                    res = 1;
-                    break;
-                }
-            }
-            i++;
-        }
+        res += check_rel(all, buf, count, node);
         free(node);
         ft_free_str(buf);
     }
-    build_path(all, &edges, num, res);
+    build_path(all, &all->edges, num, res);
     return (res);
 }
